@@ -1,5 +1,6 @@
 package projekt.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -35,6 +36,27 @@ public class UserDAO {
 	public User find(Object id) {
 		return em.find(User.class, id);
 	}
+	
+public User getUserFromDatabase(String login, String pass) {
+		
+		User u = null;
+		
+		return u;
+}
 
+public List<String> getUserRolesFromDatabase(User user) {
+		
+		ArrayList<String> roles = new ArrayList<String>();
+		
+		if (user.getLogin().equals("user1")) {
+			roles.add("user");
+		}
+		if (user.getLogin().equals("user2")) {
+			roles.add("admin");
+		}
+		
+		return roles;
+	}
+	
 	
 }
